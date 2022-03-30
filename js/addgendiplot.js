@@ -11,6 +11,7 @@ let app = new Vue({
         machinedip:[],
         time:[],
         julian: '',
+        dipR: [],
         checkedNames: [],
         message:'',
         getTwodigitYear: '',
@@ -90,6 +91,14 @@ let app = new Vue({
                 if(res.DippingLot_R == ex) lockedR = true;
             });
             return lockedR;
+        },
+        sendDipR(){
+            this.dipR = [];
+            for (let i = 0; i < this.selectedDipR.length; i++)
+            {
+                this.dipR.push(this.selectedDipR)
+                console.log(this.dipR)
+            }
         },
         callmachinedip(){
        
