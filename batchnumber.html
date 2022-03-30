@@ -182,9 +182,7 @@
                                 </td>
                                 <td><input type="text" class="form-control form-control-sm " :value="row.DippingLot_L" id="fname" name="dippinglotl"
                                 autocomplete="off" disabled></td>
-
-                                <td><input type="text" class="form-control form-control-sm " v-model="row.Batch1" id="fname" name="batch1l" :disabled="lockIt(row.DippingLot_L)">
-</td>
+                                <td><input type="text" class="form-control form-control-sm " v-model="row.Batch1" id="fname" name="batch1l" :disabled="lockIt(row.DippingLot_L)"></td>
                                 <td><input type="text" class="form-control form-control-sm expenses" v-model="row.amt1" name="amt1l" :disabled="lockIt(row.DippingLot_L)">
                                 </td>
                                 <td><input type="text" class="form-control form-control-sm " id="fname" v-model="row.Batch2" name="batch2l" :disabled="lockIt(row.DippingLot_L)">
@@ -215,11 +213,11 @@
                                 </td>
                             </tr>
                              <div class="col-lg-11">
-                                <a href="genproductlot.html">
+                              
                                 <button class="btn btn-success btn-lg m-4 " name="productgen" type="submit" style="float: right;"
                                     data-bs-target="#staticBackdrop" @click="sendDipL()" >Gen
                                     Production Lot L</button>
-                                </a>                               
+                                                            
                             </div>
                             </tbody>
                                         </table>
@@ -252,7 +250,8 @@
                                                 <th>TotalGlove</th>
                                                 <th>Action</th>
                                             </thead>
-                                            {{selectedDipR}}
+                                            <!-- {{selectedDipR}} -->
+                                            {{dipR}}
                                             <tbody>
                                 <tr v-for="(row, index) in allDataR">
                                     <td><input class="form-check-input " type="checkbox" id="flexCheckDefault" @click="selectDipR(index)" :disabled="validateDipR(index)"></td>
@@ -285,17 +284,16 @@
                                             <button type="button" name="delete" class="btn btn-danger btn-sm
                                             delete" data-bs-toggle="modal" @click="deleteData(row.DippingLot_R)"
                                             data-bs-target="#myModal">Delete</button>
+                                           
                                         </td>
                                 </tr>
-
                                 <div class="col-lg-11">
-                                    <a href="genproductlot.html">
+                                    <!-- <a href="genproductlot.html"> -->
                                     <button class="btn btn-success btn-lg m-4 " name="productgen" type="submit" style="float: right;"
-                                    data-bs-target="#staticBackdrop" @click="pagenew" >Gen
-                                    Production Lot L</button>
-                                    </a>
+                                    data-bs-target="#staticBackdrop" @click="sendDipR()" >Gen
+                                    Production Lot R</button>
+                                    <!-- </a> -->
                                 </div>
-
                                     </div>
                             </tbody>
                                 </table>
@@ -323,13 +321,10 @@ function calculateSum() {
   $row.find(".expenses_sum").val(sum.toFixed(0));
 }
 </script>
-
     <script src="js/addgendiplot.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-   
-
 </body>
 </html>

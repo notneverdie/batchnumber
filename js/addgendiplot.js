@@ -12,6 +12,7 @@ let app = new Vue({
         time:[],
         julian: '',
         dipR: [],
+        dipL: [],
         checkedNames: [],
         message:'',
         getTwodigitYear: '',
@@ -92,6 +93,15 @@ let app = new Vue({
             });
             return lockedR;
         },
+        sendDipL(){
+            this.dipL = [];
+            for (let i = 0; i < this.selectedDipL.length; i++)
+            {
+                this.dipL.push(this.selectedDipL)
+                console.log(this.dipL)
+            }
+            window.location.href = 'genproductlot.html';
+        },
         sendDipR(){
             this.dipR = [];
             for (let i = 0; i < this.selectedDipR.length; i++)
@@ -99,6 +109,8 @@ let app = new Vue({
                 this.dipR.push(this.selectedDipR)
                 console.log(this.dipR)
             }
+            window.location.href = 'genproductlot.html';
+
         },
         callmachinedip(){
        
