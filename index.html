@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{selected }}</p>
+    <div v-for="user in user_roles" :key="user[0]">
+    <input type="checkbox" @click="()=>{selectUsers(user[0])}" :value="user[0]">
+    <input type="text" v-model="test">
+    {{user[1]}}
+    </div>
+  </div>
+
+  
+<script src="https://unpkg.com/vue@3"></script>
+  <script>
+const app = Vue.createApp({
+      data(){
+        return{
+          test: '',
+          user_roles:this.test ,
+          selected:[],
+        }
+      },
+      methods: {
+        selectUsers(id){
+          //in here you can check what ever condition  before append to array.
+          if(this.selected.includes(id)){
+              this.selected=_.without(this.selected,id)
+          }else{
+              this.selected.push(id)
+          }
+      }
+  },
+
+})
+app.mount('#app')
+  </script>
+</body>
+</html>
