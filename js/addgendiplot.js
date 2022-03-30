@@ -70,6 +70,7 @@ let app = new Vue({
             }
             if(!found) this.selectedDipR.push(this.allDataR[index]);
         },
+        
         validateDipR(index){
             if(this.allDataR[index].Batch1 == '') return true;
             if(this.allDataR[index].amt1 == '') return true;
