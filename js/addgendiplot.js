@@ -15,6 +15,7 @@ let app = new Vue({
         dipL: [],
         checkedNames: [],
         message:'',
+        sendDipL:[],
         getTwodigitYear: '',
         selectedDipL: [],
         selectedDipR: [],
@@ -62,11 +63,13 @@ let app = new Vue({
         },
         selectDipR(index){
             let found = false;
-            for (let i = 0; i < this.selectedDipR.length; i++) {
-                if(this.selectedDipR[i].DippingLot_R == this.allDataR[index].DippingLot_R){
+            for (let i = 0; i < this.selectedDipR.length; i++)
+            {
+                if(this.selectedDipR[i].DippingLot_R == this.allDataR[index].DippingLot_R)
+                {
                     this.selectedDipR.splice(i, 1);
                     found = true;
-                } 
+                }
             }
             if(!found) this.selectedDipR.push(this.allDataR[index]);
         },
@@ -113,13 +116,14 @@ let app = new Vue({
             });
             return lockedR;
         },
-        sendDipL(){          
-            for (let i = 0; i < this.selectedDipR.length; i++)
-            {
-                localStorage.setItem('dipL',this.selectedDipL)
-            }
-             console.log(this.selectedDipL)
-            // window.location.href = 'genproductlot.html';
+        sendDataDipL(){       
+           
+         
+            //  return this.selectedDipL;
+            localStorage.setItem('dip', this.selectedDipL);
+            console.log(this.selectedDipL)
+            window.location.href = 'genproductlot.html';
+           
         },
         sendDipR(){
             this.dipR = [];
@@ -232,7 +236,7 @@ let app = new Vue({
         this.callglovecolor();
         this.callmachine();
         this.callsize();
-        // if(localStorage.getItem('dipL'))
-        // this.selectedDipL = localStorage.getItem('dipL').toString().split(',')
+        // if(localStorage.getItem('dip'))
+        this.selectedDipL = localStorage.getItem('dip').toString().split(',')
     },
 })
