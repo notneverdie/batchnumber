@@ -1,0 +1,31 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js"></script>
+<div id="el">
+  <input v-model.number="row.amt1" type="text" class="form-control" name="sale_quantity" id="sale_quantity" placeholder="Quantity">
+  <input v-model.number="row.amt2" type="text" step="any" class="form-control" name="sale_rate" id="sale_rate" placeholder="Rate">
+  <input :value="total" type="text" step="any" class="form-control" name="sale_total" id="sale_total" placeholder="Total Price">
+  <br>
+  Total: {{sale_total}}
+</div>
+<script>
+    new Vue({
+  el: "#el",
+  data() {
+    return {
+      row: {
+        amt1: '',
+        amt2: '',
+        sale_total: '',
+      }
+    }
+  },
+  computed: {
+    total: function() {
+      let calculatedTotal = this.row.amt1 + this.row.amt2;
+      this.sale_total = calculatedTotal;
+      console.log(typeof calculatedTotal)
+      return calculatedTotal;
+    }
+  }
+})
+</script>
+
