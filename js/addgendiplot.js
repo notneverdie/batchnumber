@@ -13,7 +13,6 @@ let app = new Vue({
         julian: '',
         dipR: [],
         dipL: [],
-        cal: [],
         checkedNames: [],
         message:'',
         getTwodigitYear: '',
@@ -115,8 +114,11 @@ let app = new Vue({
             return lockedR;
         },
         sendDipL(){          
-            console.log(this.selectedDipL)
-            localStorage.setItem('dipL',this.selectedDipL)
+            for (let i = 0; i < this.selectedDipR.length; i++)
+            {
+                localStorage.setItem('dipL',this.selectedDipL)
+            }
+             console.log(this.selectedDipL)
             // window.location.href = 'genproductlot.html';
         },
         sendDipR(){
@@ -218,21 +220,10 @@ let app = new Vue({
                     app.fetchAllData();
                 });
             }
-        },
-    //     deleteDataR(id){
-    //      if(confirm('Are you sure you want to delete')){
-    //          axios.post('control/actiongendiplot.php',{
-    //              actions: 'deleteR',
-    //              id: id
-    //          }).then(res => {
-    //              app.fetchAllData();
-    //          });
-    //      }
-    //  },
-  
+        }
     },
-    created() {
-        
+    created()
+    {
         this.fetchAllData();
         this.fetchAllDataR();
         this.callmachinedip();
@@ -242,8 +233,6 @@ let app = new Vue({
         this.callmachine();
         this.callsize();
         // if(localStorage.getItem('dipL'))
-        // this.raw = localStorage.getItem('dipL').toString().split(',')
+        // this.selectedDipL = localStorage.getItem('dipL').toString().split(',')
     },
-    
-    
 })
