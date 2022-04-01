@@ -84,7 +84,8 @@ let app = new Vue({
             var f = this.allDataR[index].amt6 != '' ? parseInt(this.allDataR[index].amt6) : 0;
             this.allDataR[index].TotalPcs =  a + b + c + d + e + f;
         },
-        calTotalR(index)
+        
+        calTotalR(index) 
         {
             var a = this.allData[index].amt1 != '' ? parseInt(this.allData[index].amt1) : 0;
             var b = this.allData[index].amt2 != '' ? parseInt(this.allData[index].amt2) : 0;
