@@ -62,7 +62,7 @@
             <!-- <span class="text"><span>Welcome To </span><span><?php echo $_SESSION['firstname'];?></span> -->
             <!-- </span> -->
         </div>
-        <div class="container" id="crudApp">
+        <div class="col-8 mx auto" id="crudApp">
             <div class=" home_content ">
                 <div class="col-12 " align="center">
                     <div class="col-md-8   p-3  m-5  " style="float: center;">
@@ -167,10 +167,20 @@
                     <h1 align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L</h1>
                     <table class="table table-bordered table-striped table-sm">
                         <tr>
-                    
-                 
                             <th>Dipping Lot</th>
-                            <th>Total</th>
+                            <th>Batch1</th>
+                            <th>Amt1</th>
+                            <th>Batch2</th>
+                            <th>Amt2</th>
+                            <th>Batch3</th>
+                            <th>Amt3</th>
+                            <th>Batch4</th>
+                            <th>Amt4</th>
+                            <th>Batch5</th>
+                            <th>Amt5</th>
+                            <th>Batch6</th>
+                            <th>Amt6</th>
+                            <th>TotalGlove</th>
                         </tr>
                         {{dipR}}
                         <tr v-for="(row,index) in dipR">
